@@ -6,10 +6,13 @@ using namespace std;
 string makeStar(int treeSize);
 string makeTree(int treeSize);
 string placeTree(int treeSize);
+int getNextYear();
 
 int main(int argc, char* argv[]) {
+     
     int treeSize = 0;
     bool isTreeSizeInvalid = true;
+    string greetings = "Merry Christmas and a Happy ";
 
     while (isTreeSizeInvalid) {
         cout << "Please enter the size of your tree (between 3 and 80): ";
@@ -25,6 +28,7 @@ int main(int argc, char* argv[]) {
     }
 
     cout << "\n" << makeStar(treeSize) << makeTree(treeSize) << placeTree(treeSize);
+    cout << "\n\n" << greetings << getNextYear() << "!";
 
     return 0;
 }
@@ -138,4 +142,13 @@ string placeTree(int treeSize) {
     treePot += "\n";
 
     return treePot;
+}
+
+int getNextYear() {
+    
+    time_t timeStamp = time(nullptr);
+    tm* now = localtime(&timeStamp);
+    int nextYear = now->tm_year + 1901;
+
+    return nextYear;
 }
