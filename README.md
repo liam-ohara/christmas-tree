@@ -26,6 +26,7 @@ Enter a postive number between 5 and 80 and hit ENTER. A Christmas tree will be 
 ### Examples
 #### Correct input
 >Please enter the size of your tree (between 5 and 80): 30
+><br /><br >
 ![Christmas tree](/screenshots/christmas-tree-30.png "Christmas tree")
 ><br /><br />
 >Merry Christmas and a Happy 2025!
