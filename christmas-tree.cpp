@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
         cin >> treeSize;
 
         if (treeSize > 80 || treeSize < 5) {
-            cout << "\n Invalid tree size. Tree size must be between 5 and 80. \n";
+            cout << "\nInvalid tree size. Tree size must be between 5 and 80.\n";
 
         } else {
             isTreeSizeInvalid = false;
