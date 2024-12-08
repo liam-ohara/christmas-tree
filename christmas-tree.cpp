@@ -3,6 +3,8 @@
 
 using namespace std;
 
+string makeTree(int treeSize);
+
 int main(int argc, char* argv[]) {
     int treeSize = 0;
     bool isTreeSizeInvalid = true;
@@ -20,6 +22,38 @@ int main(int argc, char* argv[]) {
         }
     }
 
+    cout << "\n" << makeTree(treeSize);
 
     return 0;
+}
+
+string makeTree(int treeSize) {
+
+    string tree = "";
+   
+    int numberAsterisks = 1;
+    int numberRows = (treeSize / 2) + 1;
+    for (int i = 1; i <= numberRows; i++) {
+        int numberSpaces = numberRows - i;
+        string leftSpace = "";
+        string asterisk = "";
+        
+        for (int j = 0; j < numberSpaces; j ++) {
+            leftSpace += " ";
+        }
+
+        for (int k = 0; k < numberAsterisks; k ++) {
+            asterisk += "*";
+        }
+
+        tree += leftSpace;
+        tree += asterisk; 
+        tree += "\n";
+        numberAsterisks += 2;
+        leftSpace = "";
+        asterisk = "";
+    }
+
+    return tree;
+
 }
