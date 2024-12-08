@@ -3,6 +3,7 @@
 
 using namespace std;
 
+string makeStar(int treeSize);
 string makeTree(int treeSize);
 
 int main(int argc, char* argv[]) {
@@ -22,9 +23,45 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    cout << "\n" << makeTree(treeSize);
+    cout << "\n" << makeStar(treeSize) << makeTree(treeSize);
 
     return 0;
+}
+
+string makeStar(int treeSize) {
+    string star = "";
+    int numberSpaces = treeSize / 2;
+    string leftSpace = "";
+    string leftSpaceMiddle = "";
+    string asterisk = "*";
+    string middle = "* * *";
+    string stem = "|";
+
+    for (int i = 0; i < numberSpaces; i++) {
+        leftSpace += " ";
+
+    }
+
+    for (int j = 0; j < numberSpaces - 2; j++) {
+        leftSpaceMiddle += " ";
+
+    }
+
+    star += leftSpace;
+    star += asterisk;
+    star += "\n";
+    star += leftSpaceMiddle;
+    star += middle;
+    star += "\n";
+    star += leftSpace;
+    star += asterisk;
+    star += "\n";
+    star += leftSpace;
+    star += stem;
+    star += "\n";
+
+    return star;
+
 }
 
 string makeTree(int treeSize) {
