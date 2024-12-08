@@ -5,6 +5,7 @@ using namespace std;
 
 string makeStar(int treeSize);
 string makeTree(int treeSize);
+string placeTree(int treeSize);
 
 int main(int argc, char* argv[]) {
     int treeSize = 0;
@@ -23,12 +24,13 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    cout << "\n" << makeStar(treeSize) << makeTree(treeSize);
+    cout << "\n" << makeStar(treeSize) << makeTree(treeSize) << placeTree(treeSize);
 
     return 0;
 }
 
 string makeStar(int treeSize) {
+    
     string star = "";
     int numberSpaces = treeSize / 2;
     string leftSpace = "";
@@ -93,4 +95,47 @@ string makeTree(int treeSize) {
 
     return tree;
 
+}
+
+string placeTree(int treeSize) {
+    
+    string treePot = "";
+    int numberSpaces = treeSize / 2;
+    string leftSpace = "";
+    string leftSpaceMiddle = "";
+    string leftSpaceBottom = "";
+    string trunk = "▓";
+    string lid = "_____";
+    string upperPot = "\\   /";
+    string lowerPot = "\\_/";
+
+     for (int i = 0; i < numberSpaces; i++) {
+        leftSpace += " ";
+
+    }
+
+    for (int j = 0; j < numberSpaces - 2; j++) {
+        leftSpaceMiddle += " ";
+
+    }
+
+      for (int k = 0; k < numberSpaces - 1; k++) {
+        leftSpaceBottom += " ";
+
+    }
+
+    treePot += leftSpace;
+    treePot += trunk;
+    treePot += "\n";
+    treePot += leftSpaceMiddle;
+    treePot += lid;
+    treePot += "\n";
+    treePot += leftSpaceMiddle;
+    treePot += upperPot;
+    treePot += "\n";
+    treePot += leftSpaceBottom;
+    treePot += lowerPot;
+    treePot += "\n";
+
+    return treePot;
 }
