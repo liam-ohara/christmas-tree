@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
     }
 
     cout << "\n" << makeStar(treeSize) << makeTree(treeSize) << placeTree(treeSize);
-    cout << "\n\n" << greetings << getNextYear() << "!";
+    cout << "\n\n" << greetings << getNextYear() << "!\n";
 
     return 0;
 }
